@@ -1,0 +1,23 @@
+<app-nav></app-nav>
+<div class="form-container">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-6">
+        <label for="name">Nombre</label>
+        <input id="name" type="text" pInputText [(ngModel)]="formData.name" required>
+        <div *ngIf="errores.name" class="error-message error-text">El nombre es requerido.</div>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="email">Email</label>
+        <input id="email" type="email" pInputText [(ngModel)]="formData.email" required>
+        <div *ngIf="errores.email" class="error-message error-text">El correo electrónico debe tener un formato válido.</div>
+      </div>
+      <div class="p-field p-col-12">
+        <label for="message">Mensaje</label>
+        <textarea id="message" pInputTextarea [(ngModel)]="formData.message" required></textarea>
+        <div *ngIf="errores.message" class="error-message error-text">El mensaje debe tener al menos 10 caracteres.</div>
+      </div>
+      <div class="p-field p-col-12">
+        <button pButton type="button" label="Enviar" (click)="onSubmit()"></button>
+      </div>
+    </div>
+  </div>
